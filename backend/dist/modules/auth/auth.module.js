@@ -1,0 +1,36 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+import { Module } from '@nestjs/common';
+import { SequelizeModule } from '@nestjs/sequelize';
+import { User } from '../users/schema/user.schema.js';
+import { TokenModule } from '../../infrastructure/token/token.module.js';
+import { AuthController } from './auth.controller.js';
+import { AuthService } from './auth.service.js';
+import { RedisModule } from '../../infrastructure/database/redis/redis.module.js';
+import { UserProfile } from '../profiles/user-profiles/schema/user-profile.schema.js';
+import { Freelancer } from '../profiles/freelancer/schema/freelancer.schema.js';
+import { UserVerification } from '../user-verifications/schema/user-verification.schema.js';
+let AuthModule = class AuthModule {
+};
+AuthModule = __decorate([
+    Module({
+        imports: [
+            SequelizeModule.forFeature([
+                User,
+                UserProfile,
+                UserVerification,
+                Freelancer,
+            ]),
+            TokenModule,
+            RedisModule,
+        ],
+        controllers: [AuthController],
+        providers: [AuthService],
+    })
+], AuthModule);
+export { AuthModule };
+//# sourceMappingURL=auth.module.js.map
