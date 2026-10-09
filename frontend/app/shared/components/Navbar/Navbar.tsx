@@ -40,7 +40,7 @@ export default function Navbar() {
 
   const cartCount = cart?.items.length ?? 0;
 
-  if(loading || !currentUser) {
+  if(loading) {
     return <NavbarSkeleton />
   }
 
