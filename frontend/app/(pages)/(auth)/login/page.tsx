@@ -23,7 +23,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const data = await authApi.login(form);
+     await authApi.login(form);
 
       toast.success(`Welcome back`);
       router.push("/");
