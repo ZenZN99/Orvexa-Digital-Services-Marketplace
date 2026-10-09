@@ -25,7 +25,7 @@ export default function LoginPage() {
     try {
       const data = await authApi.login(form);
 
-      toast.success(`Welcome back ${data.firstName}`);
+      toast.success(`Welcome back`);
       router.push("/");
       setForm({
         email: "",
