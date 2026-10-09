@@ -2,7 +2,7 @@
 
 **Orvexa** is a full-stack freelance services marketplace. Clients discover and buy services, pay securely through an escrow-style balance, and collaborate with freelancers inside real-time contract chats. Admins and support staff manage the whole platform from a dedicated dashboard.
 
-This folder contains the **Next.js frontend**. The API lives in [`../backend`](../backend/README.md) (NestJS · PostgreSQL · Redis · BullMQ · Socket.IO).
+This folder contains the **Next.js frontend**. The API lives in [`./backend`](./backend/README.md) (NestJS · PostgreSQL · Redis · BullMQ · Socket.IO).
 
 ---
 
