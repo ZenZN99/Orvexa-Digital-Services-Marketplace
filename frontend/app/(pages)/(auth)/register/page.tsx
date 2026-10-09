@@ -29,7 +29,7 @@ export default function RegisterPage() {
     try {
       const data = await authApi.register(form);
 
-      toast.success(`Welcome ${data.firstName} ${data.lastName}`);
+      toast.success(`Welcome to Orvexa`);
       router.push("/");
       setForm({
         firstName: "",
