@@ -203,4 +203,4 @@ Optionally seed demo data with `npm run seed` in the backend (demo admin: `admin
 
 ## Related
 
-- 📘 **Backend documentation:** [`../backend/README.md`](../backend/README.md) — architecture, contract lifecycle, payment race-condition handling and BullMQ-based contract expiration.
+- 📘 **Backend documentation:** [`./backend/README.md`](./backend/README.md) — architecture, contract lifecycle, payment race-condition handling and BullMQ-based contract expiration.
