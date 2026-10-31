@@ -1,0 +1,37 @@
+import type { RiserBob } from 'riser-bob';
+import { AuthModule } from './modules/auth/auth.module';
+import { UsersModule } from './modules/users/users.module';
+import { UserProfilesModule } from './modules/user-profiles/user-profiles.module';
+import { UserVerificationsModule } from './modules/user-verifications/user-verifications.module';
+import { FreelancersModule } from './modules/freelancers/freelancers.module';
+import { ServicesModule } from './modules/services/services.module';
+import { CartsModule } from './modules/carts/carts.module';
+import { OrdersModule } from './modules/orders/orders.module';
+import { PaymentsModule } from './modules/payments/payments.module';
+import { ContractsModule } from './modules/contracts/contracts.module';
+import { PlatformWalletsModule } from './modules/platform-wallets/platform-wallets.module';
+import { MessagesModule } from './modules/messages/messages.module';
+import { ReviewsModule } from './modules/reviews/reviews.module';
+import { SupportConversationsModule } from './modules/support-conversations/support-conversations.module';
+import { SupportMessagesModule } from './modules/support-messages/support-messages.module';
+import { NotificationsModule } from './modules/notifications/notifications.module';
+import type { Server } from 'socket.io';
+
+export const Modules = (bob: RiserBob, io: Server) => {
+  new AuthModule().register(bob);
+  new UsersModule().register(bob, io);
+  new UserProfilesModule().register(bob);
+  new UserVerificationsModule().register(bob, io);
+  new FreelancersModule().register(bob);
+  new ServicesModule().register(bob, io);
+  new CartsModule().register(bob);
+  new OrdersModule().register(bob);
+  new PaymentsModule().register(bob, io);
+  new ContractsModule().register(bob, io);
+  new PlatformWalletsModule().register(bob);
+  new MessagesModule().register(bob, io);
+  new ReviewsModule().register(bob, io);
+  new SupportConversationsModule().register(bob);
+  new SupportMessagesModule().register(bob);
+  new NotificationsModule().register(bob, io);
+};
