@@ -1,6 +1,6 @@
 import { authApi } from "./auth";
 
-export let BACKEND_URL = "http://localhost:4000";
+export let BACKEND_URL = "https://orvexa-digital-services-marketplace-6sxo.onrender.com";
 
 export interface ApiResponse<T> {
   success: boolean;
