@@ -27,8 +27,8 @@ export class AuthService {
   private getCookieOptions(isLogout = false) {
     return {
       httpOnly: true,
-      secure: false, // production : true // localhost: false
-      sameSite: 'lax' as SameSite, // production : none // localhost: lax
+      secure: true, // production : true // localhost: false
+      sameSite: 'none' as SameSite, // production : none // localhost: lax
       maxAge: isLogout ? 0 : 365 * 24 * 60 * 60 * 1000,
     };
   }
@@ -36,8 +36,8 @@ export class AuthService {
   private getRefreshCookieOptions() {
     return {
       httpOnly: true,
-      secure: false, // production : true // localhost: false
-      sameSite: 'lax' as SameSite, // production : none // localhost: lax
+      secure: true, // production : true // localhost: false
+      sameSite: 'none' as SameSite, // production : none // localhost: lax
       path: '/',
       maxAge: 30 * 24 * 60 * 60 * 1000,
     };
